@@ -157,7 +157,7 @@
             display-name = "Base";
             bindings = <
 &kp Q      &kp W      &kp E      &kp R      &kp T                                          &kp Y      &kp U      &kp I      &kp O      &kp P
-&kp A      &kp S      &kp D      &kp F      &kp G      &none                  &none         &kp H      &kp J      &kp K      &kp L      &kp SQT
+&kp A      &kp S      &kp D      &kp F      &kp G      &none                  &none         &kp H      &kp J      &kp K      &kp L      &kp MINUS
 &kp Z      &kp X      &kp C      &kp V      &kp B      &none                  &none         &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
 &none      &none      &none      &mo NAV    &kp SPC    &mo SYM                &kp BSPC      &kp RET                                      &none
             >;
@@ -169,7 +169,7 @@
             bindings = <
 &kp ESC    &mc_swap   &mc_tab    &kp CAPS   &none                                          &kp HOME       &kp PG_DN      &kp PG_UP      &kp END    &mkp LCLK
 &sk LCTRL  &sk LSHFT  &sk LALT   &sk LGUI   &kp TAB    &none                  &none        &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT  &mkp RCLK
-&mc_undo   &mc_cut    &mc_copy   &mc_paste  &mc_redo   &none                  &none        &msc SCRL_DOWN &msc SCRL_UP   &mc_zmin       &mc_zmout  &mkp MCLK
+&mc_undo   &mc_cut    &mc_copy   &mc_paste  &mc_redo   &none                  &none        &msc SCRL_DOWN &msc SCRL_UP   &mc_zmin       &mc_zmout  &none
 &none      &none      &none      &trans     &trans     &trans                 &trans       &trans                                                  &none
             >;
         };
@@ -201,7 +201,7 @@
             display-name = "Mouse";
             bindings = <
 &trans     &trans     &trans     &trans     &trans                                            &trans     &trans     &trans     &trans     &trans
-&trans     &trans     &trans     &trans     &trans     &trans                 &trans          &trans     &mkp MB1   &mkp MB3   &mkp MB2   &trans
+&trans     &trans     &trans     &trans     &trans     &trans                 &trans          &trans     &mkp MB1   &none      &mkp MB2   &trans
 &trans     &trans     &trans     &trans     &trans     &trans                 &trans          &trans     &trans     &trans     &trans     &trans
 &trans     &trans     &trans     &trans     &trans     &trans                 &trans          &trans                                      &trans
             >;
