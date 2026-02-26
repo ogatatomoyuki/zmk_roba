@@ -163,14 +163,14 @@
             >;
         };
 
-        // Layer 1: NAV（左親指左で有効）
+        // Layer 1: NAV（左親指左で有効）- Charybdis と同じ配置
         NAV_layer {
             display-name = "Nav";
             bindings = <
-&kp ESC    &mc_swap   &mc_tab    &tog SCROLL &none                                          &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &none
-&sk LCTRL  &sk LSHFT  &sk LALT   &sk LGUI   &kp TAB    &none                  &none         &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &none
-&mc_undo   &mc_cut    &mc_copy   &mc_paste  &mc_redo   &none                  &none         &mc_zmout  &mc_zmin   &none      &none      &none
-&none      &none      &none      &trans     &trans     &trans                 &trans        &trans                                       &none
+&kp ESC    &mc_swap   &mc_tab    &kp CAPS   &none                                          &kp HOME       &kp PG_DN      &kp PG_UP      &kp END    &mkp LCLK
+&sk LCTRL  &sk LSHFT  &sk LALT   &sk LGUI   &kp TAB    &none                  &none        &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT  &mkp RCLK
+&mc_undo   &mc_cut    &mc_copy   &mc_paste  &mc_redo   &none                  &none        &msc SCRL_DOWN &msc SCRL_UP   &mc_zmin       &mc_zmout  &mkp MCLK
+&none      &none      &none      &trans     &trans     &trans                 &trans       &trans                                                  &none
             >;
         };
 
