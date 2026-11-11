@@ -120,6 +120,17 @@
     combos {
         compatible = "zmk,combos";
 
+
+        // J + K → Caps Word（2026-11-12 緒方さん指示でコンボ化）
+        // 旧: NAV層のキーに置いていた / 旧 D+F の tmux prefix コンボは廃止（「pdf」で誤発火）
+        combo_caps_word {
+            timeout-ms = <80>;
+            require-prior-idle-ms = <150>;
+            key-positions = <18 19>;
+            bindings = <&caps_word>;
+            layers = <BASE>;
+        };
+
         // SPC(38) + BSPC(40) → LNG1 (IME ON)
         combo_lng1 {
             timeout-ms = <50>;
