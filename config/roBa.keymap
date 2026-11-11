@@ -137,6 +137,45 @@
             bindings = <&kp LANGUAGE_2>;
             layers = <BASE>;
         };
+
+        // --- ブートローダー / リセット（物理リセットボタンの代替・艦隊共通設計） ---
+        // 「上段最外(Q/P) ＋ 下段最内(B/N)」は共通で、**親指だけずらして**切り替える。
+        //   親指内側          → &bootloader（焼き用・リセット2回押し相当）
+        //   親指内側から2番目 → &sys_reset （再起動・1回押し相当）
+        // ★各コンボは同一半身のキーのみで構成（片側だけUSB接続して焼く運用のため）。
+        // ★layers 未指定＝全レイヤーで有効。3キーなので timeout は緩める。
+
+        // bootloader — 左: Q(0) + B(26) + NAV(37=親指内側)
+        combo_boot_left {
+            timeout-ms = <100>;
+            require-prior-idle-ms = <250>;
+            key-positions = <0 26 37>;
+            bindings = <&bootloader>;
+        };
+
+        // bootloader — 右: P(9) + N(29) + BSPC(40=親指内側)
+        combo_boot_right {
+            timeout-ms = <100>;
+            require-prior-idle-ms = <250>;
+            key-positions = <9 29 40>;
+            bindings = <&bootloader>;
+        };
+
+        // sys_reset — 左: Q(0) + B(26) + SPC(38=内側から2番目)
+        combo_reset_left {
+            timeout-ms = <100>;
+            require-prior-idle-ms = <250>;
+            key-positions = <0 26 38>;
+            bindings = <&sys_reset>;
+        };
+
+        // sys_reset — 右: P(9) + N(29) + ENT(41=内側から2番目)
+        combo_reset_right {
+            timeout-ms = <100>;
+            require-prior-idle-ms = <250>;
+            key-positions = <9 29 41>;
+            bindings = <&sys_reset>;
+        };
     };
 
     // --- Conditional Layer (NAV + SYM = FUN) ---
