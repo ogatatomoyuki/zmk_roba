@@ -141,19 +141,23 @@
         // --- ブートローダー / リセット（物理リセットボタンの代替・艦隊共通設計） ---
         // 「上段最外(Q/P) ＋ 下段最内(B/N)」は共通で、**親指だけずらして**切り替える。
         //   親指内側          → &bootloader（焼き用・リセット2回押し相当）
+        // ⚠️ 親指の物理配置（2026-11-12 緒方さん確認。キーマップの並び順と内外が逆）:
+        //     左手 [NAV][SPC][SYM] │ 中央 │ [BSPC][ENT] 右手
+        //           外側 →→→ 内側          内側 ←←← 外側
+        //   ＝ **内側(中央寄り)は 左=SYM / 右=BSPC**。NAV は左の一番外側。
         //   親指内側から2番目 → &sys_reset （再起動・1回押し相当）
         // ★各コンボは同一半身のキーのみで構成（片側だけUSB接続して焼く運用のため）。
         // ★layers 未指定＝全レイヤーで有効。3キーなので timeout は緩める。
 
-        // bootloader — 左: Q(0) + B(26) + NAV(37=親指内側)
+        // bootloader — 左: Q(0) + B(26) + SYM(39=親指内側＝中央寄り)
         combo_boot_left {
             timeout-ms = <100>;
             require-prior-idle-ms = <250>;
-            key-positions = <0 26 37>;
+            key-positions = <0 26 39>;
             bindings = <&bootloader>;
         };
 
-        // bootloader — 右: P(9) + N(29) + BSPC(40=親指内側)
+        // bootloader — 右: P(9) + N(29) + BSPC(40=親指内側＝中央寄り)
         combo_boot_right {
             timeout-ms = <100>;
             require-prior-idle-ms = <250>;
