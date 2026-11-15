@@ -239,7 +239,20 @@
             >;
         };
 
-        // Layer 3: FUN（NAV + SYM 同時で自動発動）
+        // Layer 3: FUN（NAV + SYM 同時で自動発動）— **艦隊共通配置**（正本=Atreus・2026-11-15 統一）
+        //   左 = 機器設定＋ボリューム / 右 = F1..F15
+        //   BT0  BT1    BT2  BT3   BT4  │ F1  F2  F3  F4  F5
+        //   CLR  USB⇄BT MUTE VOL-  VOL+ │ F6  F7  F8  F9  F10
+        //   CLRa ・     ・   ・     ・   │ F11 F12 F13 F14 F15
+        //
+        //   ★roBa は **roam (RPi5) 専用機**（2026-11-15 緒方さん確認）。
+        //     roam は RPi5 のホスト名（Tailnet ノード名でもあるが BT 接続自体は無関係）。
+        //     Keyball39 BT が HW 問題で中断したため 2026-04-25 以降 roBa が roam 接続を担当。
+        //     → **1番目(BT_SEL 0) = roam**。他機の「1番目=iPad mini」とはここだけ違う。
+        //       2〜5番目は未使用（キー位置は艦隊共通のまま空けておく）。
+        //   ★ペアリング実体は各キーボードが個別保持するので、キー位置を共通にしたまま
+        //     機体ごとに別の機器を割り当てられる（ファーム側の差分は不要）。
+        //   参考: 30_Areas/プライベート_キーボードカスタマイズ設定/Keyball39_BT/ai.md
         FUN_layer {
             display-name = "Fun";
             bindings = <

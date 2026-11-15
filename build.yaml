@@ -1,3 +1,9 @@
+# ⚠️ ボード表記は ZMK の Zephyr 4.1 移行（2025-12-09）で変更された。
+# 旧 `seeeduino_xiao_ble` は無効（エラー: Missing ZMK Compat / KeyError: 'qualifiers'）。
+# 「ZMK variant」指定が必須 → `xiao_ble//zmk`
+#   ※XIAO BLE のボード名自体も seeeduino_xiao_ble → xiao_ble に改称されている。
+# 参考: https://zmk.dev/blog/2025/12/09/zephyr-4-1#zmk-board-variant
+# 診断のコツ: 自分が触っていない settings_reset も同時に落ちるなら ZMK 本体側の変更が原因。
 # This file generates the GitHub Actions matrix.
 # For simple board + shield combinations, add them to the top level board and
 # shield arrays, for more control, add individual board + shield combinations
@@ -18,10 +24,10 @@
 #
 ---
 include:
- - board: seeeduino_xiao_ble
+ - board: xiao_ble//zmk
    shield: roBa_R
    snippet: studio-rpc-usb-uart
- - board: seeeduino_xiao_ble
+ - board: xiao_ble//zmk
    shield: roBa_L
- - board: seeeduino_xiao_ble
+ - board: xiao_ble//zmk
    shield: settings_reset
