@@ -243,7 +243,7 @@
         //   左 = 機器設定＋ボリューム / 右 = F1..F15
         //   BT0  BT1    BT2  BT3   BT4  │ F1  F2  F3  F4  F5
         //   CLR  USB⇄BT MUTE VOL-  VOL+ │ F6  F7  F8  F9  F10
-        //   CLRa ・     ・   ・     ・   │ F11 F12 F13 F14 F15
+        //   ・   ・     ・   ・     ・   │ F11 F12 F13 F14 F15
         //
         //   ★roBa は **roam (RPi5) 専用機**（2026-11-15 緒方さん確認）。
         //     roam は RPi5 のホスト名（Tailnet ノード名でもあるが BT 接続自体は無関係）。
@@ -258,7 +258,7 @@
             bindings = <
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                               &kp F1   &kp F2   &kp F3   &kp F4   &kp F5
 &bt BT_CLR    &out OUT_TOG  &kp K_MUTE    &kp K_VOL_DN  &kp K_VOL_UP  &none            &none        &kp F6   &kp F7   &kp F8   &kp F9   &kp F10
-&bt BT_CLR_ALL &none        &none         &none         &none         &none            &none        &kp F11  &kp F12  &kp F13  &kp F14  &kp F15
+&none          &none        &none         &none         &none         &none            &none        &kp F11  &kp F12  &kp F13  &kp F14  &kp F15
 &none      &none      &none      &trans     &trans     &trans                 &trans        &trans                                                &none
             >;
         };
